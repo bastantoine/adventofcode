@@ -2,10 +2,12 @@ from typing import List
 import os
 
 
+DATA_FILENAME = 'data.txt'
+
 def get_input(fake: bool) -> List[int]:
     if fake:
         return [199,200,208,210,200,207,240,269,260,263]
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data.txt')) as f:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), DATA_FILENAME)) as f:
         return [int(line) for line in f.readlines()]
 
 def compute(input: List[int]) -> int:
